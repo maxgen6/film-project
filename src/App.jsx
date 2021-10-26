@@ -1,7 +1,14 @@
 import React from 'react';
+import { Container } from '@mui/material';
+import MainContent from './views/MainContent';
 
 function App() {
-  return <div>1</div>;
+  return (
+    <>
+      <MainContent />
+      <Container maxWidth="lg">123</Container>
+    </>
+  );
 }
 
 export default App;
