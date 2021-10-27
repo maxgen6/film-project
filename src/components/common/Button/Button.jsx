@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ButtonLink, ButtonPrimary } from './styled';
+import { ButtonLink, ButtonPrimary } from './Button.styles';
 
 const Button = React.forwardRef((props, ref) => {
   const { type = 'primary', text, ...rest } = props;

@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
-import { SearchInputBlock, SearchInputs } from './styled';
+import { SearchInputBlock, SearchInputs } from './SearchInput.styles';
 
 const SearchInput = () => {
   return (

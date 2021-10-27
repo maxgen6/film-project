@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import bg from '../../assets/images/bg.jpeg';
+import bg from 'assets/images/bg.jpeg';
 
 export const MainContentBg = styled('div')({
   'minHeight': 300,
