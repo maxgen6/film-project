@@ -1,4 +1,4 @@
-import { AppBar, Container, styled } from '@mui/material';
+import { AppBar, styled } from '@mui/material';
 
 export const HeaderBlock = styled(AppBar)({
   background: 'transparent',

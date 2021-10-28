@@ -1,9 +1,9 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { HeaderBlock } from './Header.styles';
-import Button from 'components/common';
+import Button from 'components/common/Button';
 
-const Header = () => {
+const Header = ({ detailPage }) => {
   return (
     <HeaderBlock
       position="static"
@@ -12,7 +12,7 @@ const Header = () => {
       <Typography variant="h6" component="h1" color="secondary" sx={{ flexGrow: 1 }}>
         netflixtoulette
       </Typography>
-      {/*<Button type="link" text="search" />*/}
+      {detailPage && <Button type="link" text="search" />}
     </HeaderBlock>
   );
 };

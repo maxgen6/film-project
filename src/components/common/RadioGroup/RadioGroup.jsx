@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import { ToggleButtonGroup, ToggleButton } from '@mui/material';
+import { ToggleButtonGroup } from '@mui/material';
 
-import { RadioGroupBlock, RadioButtonSubtitle, useStyles } from './RadioGroup.styles';
+import { RadioGroupBlock, RadioButtonSubtitle, RadioButton } from './RadioGroup.styles';
 
 const RadioGroup = () => {
-  const classes = useStyles();
-
-  console.log(classes);
-
   const toggleOptions = Object.freeze({
     title: 'title',
     genre: 'genre',
@@ -22,17 +18,15 @@ const RadioGroup = () => {
       <RadioButtonSubtitle component="p">search by</RadioButtonSubtitle>
       <ToggleButtonGroup value={radioValue} exclusive onChange={handleChangeRadio}>
         {Object.values(toggleOptions).map((option) => (
-          <ToggleButton
+          <RadioButton
             key={option}
             value={option}
-            className={classes.toggleButton}
-            classes={{ root: classes.toggleButton }}
             style={{ borderRadius: 5 }}
             aria-label={option}
             selected={radioValue === option}
           >
             {option}
-          </ToggleButton>
+          </RadioButton>
         ))}
       </ToggleButtonGroup>
     </RadioGroupBlock>

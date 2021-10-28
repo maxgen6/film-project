@@ -2,6 +2,12 @@ import { styled } from '@mui/material';
 import bg from 'assets/images/bg.jpeg';
 import { makeStyles } from '@mui/styles';
 
+export const Wrapper = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
+});
+
 export const MainLayoutHeaderWrapper = styled('div')({
   'minHeight': 300,
   'backgroundImage': `url(${bg})`,

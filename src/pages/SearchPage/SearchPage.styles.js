@@ -18,3 +18,11 @@ export const MainContentBg = styled('div')({
     zIndex: 0,
   },
 });
+
+export const CardBlock = styled('div')({
+  padding: '30px 0',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+});

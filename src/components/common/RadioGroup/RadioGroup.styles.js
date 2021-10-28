@@ -1,20 +1,12 @@
-import { styled, Box, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { styled, Box, ToggleButton, Typography } from '@mui/material';
 
 export const RadioGroupBlock = styled(Box)({
   display: 'flex',
   alignItems: 'center',
 });
 
-export const RadioButtonSubtitle = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.main,
-  textTransform: 'uppercase',
-  fontWeight: 'bold',
-  marginRight: 15,
-}));
-
-export const useStyles = makeStyles((theme) => ({
-  toggleButton: {
+export const RadioButton = styled(ToggleButton)(({ theme }) => {
+  return {
     'marginRight': 15,
     'padding': '5px 30px',
     'fontWeight': 'bold',
@@ -30,5 +22,12 @@ export const useStyles = makeStyles((theme) => ({
         backgroundColor: '#674248',
       },
     },
-  },
+  };
+});
+
+export const RadioButtonSubtitle = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.main,
+  textTransform: 'uppercase',
+  fontWeight: 'bold',
+  marginRight: 15,
 }));
