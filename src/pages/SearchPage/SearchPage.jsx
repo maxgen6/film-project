@@ -11,7 +11,7 @@ const SearchPage = ({ cardData }) => {
 
   return (
     <MainLayout renderHeaderContent={renderHeaderContent} cardData={cardData}>
-      <Container maxWidth="1250">
+      <Container maxWidth="xl">
         <RenderCards cardData={cardData} />
       </Container>
     </MainLayout>

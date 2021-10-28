@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import SearchPage from 'pages/SearchPage';
 import DetailPage from 'pages/DetailPage';
 
@@ -128,7 +129,10 @@ function App() {
 
   return (
     <>
-      <DetailPage cardData={cardData} />
+      <Switch>
+        <Route exact path="/" component={() => <SearchPage cardData={cardData} />} />
+        <Route exact path="/:id" component={() => <DetailPage cardData={cardData} />} />
+      </Switch>
     </>
   );
 }

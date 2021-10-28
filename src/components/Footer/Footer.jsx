@@ -7,7 +7,7 @@ import { FooterBlock } from './Footer.styles';
 const Footer = () => {
   return (
     <FooterBlock>
-      <Container maxWidth="1250">
+      <Container maxWidth="xl">
         <Typography variant="h6" component="p" color="secondary">
           netflixroulette
         </Typography>

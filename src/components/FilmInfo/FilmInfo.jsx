@@ -7,8 +7,6 @@ import Typography from '@mui/material/Typography';
 import { FilmInfoBlock, TypographyBlock, FilmInfoFlexBlock, Rating } from './FilmInfo.styles';
 
 const FilmInfo = ({ film }) => {
-  console.log(film);
-
   return (
     <FilmInfoBlock>
       <CardMedia

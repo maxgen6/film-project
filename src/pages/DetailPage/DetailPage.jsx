@@ -11,7 +11,7 @@ const DetailPage = ({ cardData }) => {
 
   return (
     <MainLayout renderHeaderContent={renderHeaderContent} detailPage={true} film={cardData[0]}>
-      <Container maxWidth="1250">
+      <Container maxWidth="xl">
         <RenderCards cardData={cardData} />
       </Container>
     </MainLayout>
