@@ -131,7 +131,7 @@ function App() {
     <>
       <Switch>
         <Route exact path="/" component={() => <SearchPage cardData={cardData} />} />
-        <Route exact path="/:id" component={() => <DetailPage cardData={cardData} />} />
+        <Route exact path="/search-film/:id" component={() => <DetailPage cardData={cardData} />} />
       </Switch>
     </>
   );

@@ -12,7 +12,7 @@ const CardInfo = ({ cardInfo }) => {
   const history = useHistory();
 
   return (
-    <CardBlock onClick={() => history.push(`/${cardInfo.id}`)}>
+    <CardBlock onClick={() => history.push(`/search-film/${cardInfo.id}`)}>
       <CardMedia component="img" height="250" image={cardInfo.poster_path} alt={cardInfo.title} />
       <CardContent>
         <CardTitle>
