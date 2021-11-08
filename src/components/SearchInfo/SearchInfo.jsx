@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { InfoBlock, Wrapper, SortBlock, RadioButton } from './SearchInfo.styles';
 
-const SearchInfo = ({ cardData, detailPage, film }) => {
-  const toggleContent = Object.freeze({
-    release: 'release date',
-    rating: 'rating',
-  });
+const toggleContent = Object.freeze({
+  release: 'release date',
+  rating: 'rating',
+});
 
+const SearchInfo = ({ cardData, detailPage, film }) => {
   const [radioValue, setRadioValue] = useState(null);
 
-  const handleChangeRadio = (_, value) => setRadioValue(value);
+  const handleChangeRadio = useCallback((_, value) => setRadioValue(value), [radioValue]);
 
   const renderSearchInfo = () => {
     if (!cardData || cardData?.length === 0) {

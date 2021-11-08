@@ -5,6 +5,8 @@ import App from 'components/App/App';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { theme } from './styles';
 
+import 'utils/i18n';
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

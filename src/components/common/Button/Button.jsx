@@ -3,26 +3,21 @@ import PropTypes from 'prop-types';
 
 import { ButtonLink, ButtonPrimary } from './Button.styles';
 
+const TYPE_TO_COMPONENT = {
+  link: ButtonLink,
+  primary: ButtonPrimary,
+};
+
 const Button = React.forwardRef((props, ref) => {
   const { type = 'primary', text, ...rest } = props;
-  const buttonContent = (type) => {
-    switch (type) {
-      case 'link':
-        return (
-          <ButtonLink type="link" ref={ref} {...rest}>
-            {text}
-          </ButtonLink>
-        );
-      case 'primary':
-        return (
-          <ButtonPrimary type="primary" ref={ref} {...rest}>
-            {text}
-          </ButtonPrimary>
-        );
-    }
-  };
 
-  return <>{buttonContent(type)}</>;
+  const ButtonComponent = TYPE_TO_COMPONENT[type];
+
+  return (
+    <ButtonComponent type={type} ref={ref} {...rest}>
+      {text}
+    </ButtonComponent>
+  );
 });
 
 Button.propTypes = {

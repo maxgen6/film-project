@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { ToggleButtonGroup } from '@mui/material';
 
 import { RadioGroupBlock, RadioButtonSubtitle, RadioButton } from './RadioGroup.styles';
 
-const RadioGroup = () => {
-  const toggleOptions = Object.freeze({
-    title: 'title',
-    genre: 'genre',
-  });
+const toggleOptions = Object.freeze({
+  title: 'title',
+  genre: 'genre',
+});
 
+const RadioGroup = () => {
   const [radioValue, setRadioValue] = useState(toggleOptions.title);
 
-  const handleChangeRadio = (_, value) => setRadioValue(value);
+  const handleChangeRadio = useCallback((_, value) => setRadioValue(value), [radioValue]);
 
   return (
     <RadioGroupBlock>
