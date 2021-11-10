@@ -11,7 +11,7 @@ const toggleOptions = Object.freeze({
 const RadioGroup = () => {
   const [radioValue, setRadioValue] = useState(toggleOptions.title);
 
-  const handleChangeRadio = useCallback((_, value) => setRadioValue(value), [radioValue]);
+  const handleChangeRadio = useCallback((_, value) => setRadioValue(value), []);
 
   return (
     <RadioGroupBlock>

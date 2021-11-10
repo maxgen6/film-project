@@ -4,6 +4,7 @@ import SearchPage from 'pages/SearchPage';
 import DetailPage from 'pages/DetailPage';
 import NotPage from 'pages/NotPage';
 import Login from 'pages/Login';
+import Authorization from 'pages/Authorization';
 
 const cardData = [
   {
@@ -133,7 +134,8 @@ function App() {
     <>
       <Switch>
         <Route exact path="/" component={() => <SearchPage cardData={cardData} />} />
-        <Route path="/login" component={Login} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Authorization} />
         <Route exact path="/search-film/:id" component={() => <DetailPage cardData={cardData} />} />
         <Route component={NotPage} />
       </Switch>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ContainerBlock } from './Login.styles';
-import LoginForm from 'components/LoginForm';
+import { ContainerBlock } from './Authorization.styles';
 import Button from 'components/common/Button';
+import LoginForm from 'components/LoginForm';
 
-const Login = () => {
-  const handleLogin = (value) => {
+const Authorization = () => {
+  const handleRegister = (value) => {
     console.log(value);
   };
 
@@ -14,14 +14,14 @@ const Login = () => {
     <ContainerBlock>
       <Button
         type={'link'}
-        text={'sign up'}
-        to="/register"
+        text={'login'}
+        to="/login"
         component={Link}
         sx={{ border: '1px solid black', marginLeft: 'auto' }}
       />
-      <LoginForm title={'login'} ButtonText={'LOGIN'} handlerSubmit={handleLogin} />
+      <LoginForm title={'sign up'} ButtonText={'SIGN UP'} handlerSubmit={handleRegister} />
     </ContainerBlock>
   );
 };
 
-export default Login;
+export default Authorization;

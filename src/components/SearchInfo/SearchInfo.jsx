@@ -13,7 +13,7 @@ const toggleContent = Object.freeze({
 const SearchInfo = ({ cardData, detailPage, film }) => {
   const [radioValue, setRadioValue] = useState(null);
 
-  const handleChangeRadio = useCallback((_, value) => setRadioValue(value), [radioValue]);
+  const handleChangeRadio = useCallback((_, value) => setRadioValue(value), []);
 
   const renderSearchInfo = () => {
     if (!cardData || cardData?.length === 0) {
