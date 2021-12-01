@@ -26,13 +26,13 @@ const LoginForm = ({ title, ButtonText, handlerSubmit }) => {
           type="email"
           error={!emailData}
           helperText={!emailData && 'input your email'}
-          onChange={(e) => setEmailData(e.target.value)}
+          onChange={(e) => setEmailData(e.target.value)} // TODO validate func
         />
         <FormInput
           placeholder="Password"
           type="password"
           error={!passwordData}
-          helperText={!passwordData && 'input your password'}
+          helperText={!passwordData && passwordData?.length < 5 && 'input your password'}
           onChange={(e) => setPasswordData(e.target.value)}
         />
         <Button text={ButtonText} type="primary" onClick={isHandlerSubmit} />

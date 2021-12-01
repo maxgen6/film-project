@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import { HeaderBlock } from './Header.styles';
 import Button from 'components/common/Button';
+import { clearToken } from 'utils/localStorage';
 
 const Header = ({ detailPage }) => {
+
+  const logout = useCallback(() => clearToken(), []);
+
   return (
     <HeaderBlock
       position="static"
@@ -14,6 +18,14 @@ const Header = ({ detailPage }) => {
         netflixtoulette
       </Typography>
       {detailPage && <Button type="link" text="search" to="/" component={Link} />}
+      <Button
+        sx={{ ml: 5 }}
+        type="link"
+        text="logout"
+        to="/login"
+        component={Link}
+        onClick={logout}
+      />
     </HeaderBlock>
   );
 };

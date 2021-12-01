@@ -5,7 +5,10 @@ import App from 'components/App/App';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { theme } from './styles';
 
+import { initFirebase } from 'utils/firebase';
 import 'utils/i18n';
+
+initFirebase();
 
 ReactDOM.render(
   <React.StrictMode>

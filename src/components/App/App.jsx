@@ -5,6 +5,7 @@ import DetailPage from 'pages/DetailPage';
 import NotPage from 'pages/NotPage';
 import Login from 'pages/Login';
 import Authorization from 'pages/Authorization';
+import PrivateRoute from '../PrivateRoute';
 
 const cardData = [
   {
@@ -133,10 +134,13 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/" component={() => <SearchPage cardData={cardData} />} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Authorization} />
-        <Route exact path="/search-film/:id" component={() => <DetailPage cardData={cardData} />} />
+        <PrivateRoute exact path="/" component={() => <SearchPage cardData={cardData} />} />
+        <PrivateRoute
+          path="/search-film/:id"
+          component={() => <DetailPage cardData={cardData} />}
+        />
         <Route component={NotPage} />
       </Switch>
     </>
