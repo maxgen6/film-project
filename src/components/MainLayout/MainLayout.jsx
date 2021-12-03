@@ -24,6 +24,7 @@ const MainLayout = ({ renderHeaderContent, children, cardData, detailPage, film 
             {renderHeaderContent()}
           </Container>
         </MainLayoutHeaderWrapper>
+        {/* Comment: overcomplicated for create a film genre banner, it should be a part of Detail page only */}
         <SearchInfo cardData={cardData} detailPage={detailPage} film={film} />
       </div>
 

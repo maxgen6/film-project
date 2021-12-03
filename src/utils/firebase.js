@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
+// Comment: Unused code
 const firebaseConfig = firebase.initializeApp({
     apiKey: 'AIzaSyDrQ_apTwKNFQk1XgyS35IkBTmVYU3-pqE',
     authDomain: 'react-movies-82cd8.firebaseapp.com',

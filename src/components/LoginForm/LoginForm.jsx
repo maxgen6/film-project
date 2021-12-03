@@ -6,6 +6,7 @@ const LoginForm = ({ title, ButtonText, handlerSubmit }) => {
   const [emailData, setEmailData] = useState(null);
   const [passwordData, setPasswordData] = useState(null);
 
+  // Comment: name of the handler is not proper
   const isHandlerSubmit = (e) => {
     e.preventDefault();
     const obj = {

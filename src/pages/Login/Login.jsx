@@ -19,6 +19,7 @@ const Login = () => {
         .signInWithEmailAndPassword(value.email, value.password)
         .then((response) => {
           if (response.operationType === 'signIn') {
+            // Comment: response?.user?.getIdToken() should be used
             setToken(response?.user?.refreshToken);
             history.push('/');
           }

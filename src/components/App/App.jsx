@@ -129,7 +129,18 @@ const cardData = [
     runtime: 105,
   },
 ];
-
+/*
+  1) Use const for Routes and use across the app
+  // constants/routes.js
+  const ROUTES = {
+  root: '/',
+  login: '/login',
+  ...
+  };
+  2) The same name for page components ...Page
+  3) Login and Signup actions would be better to move to api/auth folder
+  4) Create property file for i18n with english texts and connect it to the app
+ */
 function App() {
   return (
     <>
