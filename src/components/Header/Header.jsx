@@ -15,7 +15,7 @@ const Header = ({ detailPage, t }) => {
       style={{ background: 'transparent', boxShadow: 'none', flexDirection: 'row' }}
     >
       <Typography variant="h6" component="h1" color="secondary" sx={{ flexGrow: 1 }}>
-        {t(logo)}
+        {t('logo')}
       </Typography>
       {detailPage && <Button type="link" text="search" to="/" component={Link} />}
       <Button
