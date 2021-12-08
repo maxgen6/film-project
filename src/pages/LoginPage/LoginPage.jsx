@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { ContainerBlock } from './Login.styles';
+import { ContainerBlock } from './LoginPage.styles';
 import LoginForm from 'components/LoginForm';
 import Button from 'components/common/Button';
-import firebase from 'utils/firebase';
 import Alerts from 'components/common/Alerts';
 import { setToken } from 'utils/localStorage';
+import { login } from 'api/auth';
 
-const Login = () => {
+const LoginPage = () => {
   const history = useHistory();
   const [errorMessage, setErrorMessage] = useState(false);
 
   const handleLogin = (value) => {
     try {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(value.email, value.password)
+      login(value)
         .then((response) => {
           if (response.operationType === 'signIn') {
             // Comment: response?.user?.getIdToken() should be used
@@ -54,4 +52,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

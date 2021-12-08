@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { ContainerBlock } from './Authorization.styles';
+import { ContainerBlock } from './AuthorizationPage.styles';
 import Button from 'components/common/Button';
 import Alerts from 'components/common/Alerts';
 import LoginForm from 'components/LoginForm';
-import firebase from 'utils/firebase';
 import { setToken } from 'utils/localStorage';
+import { register } from 'api/auth';
 
-const Authorization = () => {
+const AuthorizationPage = () => {
   const history = useHistory();
   const [errorMessage, setErrorMessage] = useState(false);
 
   const handleRegister = (value) => {
-    const { email, password } = value;
     try {
-      if (email && password) {
-        firebase
-          .auth()
-          .createUserWithEmailAndPassword(email, password)
+      if (value) {
+        register(value)
           .then((response) => {
             setToken(response?.user?.refreshToken);
             history.push('/');
@@ -56,4 +53,4 @@ const Authorization = () => {
   );
 };
 
-export default Authorization;
+export default AuthorizationPage;

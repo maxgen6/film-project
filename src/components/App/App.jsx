@@ -3,9 +3,11 @@ import { Switch, Route } from 'react-router-dom';
 import SearchPage from 'pages/SearchPage';
 import DetailPage from 'pages/DetailPage';
 import NotPage from 'pages/NotPage';
-import Login from 'pages/Login';
-import Authorization from 'pages/Authorization';
+import LoginPage from 'pages/LoginPage';
+import AuthorizationPage from 'pages/AuthorizationPage';
 import PrivateRoute from '../PrivateRoute';
+import { ROUTES } from 'constants/routes';
+import PublicRoute from '../PublicRoute';
 
 const cardData = [
   {
@@ -130,23 +132,34 @@ const cardData = [
   },
 ];
 /*
-  1) Use const for Routes and use across the app
-  // constants/routes.js
-  const ROUTES = {
-  root: '/',
-  login: '/login',
-  ...
-  };
-  2) The same name for page components ...Page
-  3) Login and Signup actions would be better to move to api/auth folder
   4) Create property file for i18n with english texts and connect it to the app
  */
 function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Authorization} />
+        {ROUTES?.map((item) => {
+          const { root, component, private: isPrivate, exact } = item;
+          let RouteWrapper;
+
+          const Component = component;
+
+          if (isPrivate) {
+            RouteWrapper = PrivateRoute;
+          } else {
+            RouteWrapper = PublicRoute;
+          }
+
+          return (
+            <RouteWrapper key={root} path={root} exact={exact} page={item}>
+              <>
+                <Component />
+              </>
+            </RouteWrapper>
+          );
+        })}
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/register" component={AuthorizationPage} />
         <PrivateRoute exact path="/" component={() => <SearchPage cardData={cardData} />} />
         <PrivateRoute
           path="/search-film/:id"
