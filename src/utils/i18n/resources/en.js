@@ -6,10 +6,13 @@ export default {
   header: {
     logout: 'logout',
     logo: 'netflixtoulette',
-    title: 'Find your movie',
+    search_title: 'Find your movie',
     search: 'search by',
     titleTab: 'title',
     genreTab: 'genre',
-    searchButton: 'search',
+    search_button: 'search',
+  },
+  footer: {
+    logo: 'netflixtoulette',
   },
 };

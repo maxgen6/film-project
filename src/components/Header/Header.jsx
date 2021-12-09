@@ -30,4 +30,4 @@ const Header = ({ detailPage, t }) => {
   );
 };
 
-export default withTranslation()(Header);
+export default withTranslation('header')(Header);
