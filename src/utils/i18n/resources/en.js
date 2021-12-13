@@ -1,7 +1,8 @@
 export default {
   auth: {
     login: 'login',
-    signUp: 'sign up',
+    sign_up: 'sign up',
+    sign_in: 'sign in',
   },
   header: {
     logout: 'logout',
@@ -14,5 +15,15 @@ export default {
   },
   footer: {
     logo: 'netflixtoulette',
+  },
+  not_page: {
+    title: 'Page not founded!',
+    button_text: 'Back home!',
+  },
+  search_info: {
+    film_by: 'Film by',
+    genres: 'genres',
+    movies_found: 'movies found',
+    sort_by: 'Sort by',
   },
 };

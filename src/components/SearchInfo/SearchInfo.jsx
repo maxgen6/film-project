@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -10,7 +11,7 @@ const toggleContent = Object.freeze({
   rating: 'rating',
 });
 
-const SearchInfo = ({ cardData, detailPage, film }) => {
+const SearchInfo = ({ cardData, detailPage, film, t }) => {
   const [radioValue, setRadioValue] = useState(null);
 
   const handleChangeRadio = useCallback((_, value) => setRadioValue(value), []);
@@ -20,7 +21,7 @@ const SearchInfo = ({ cardData, detailPage, film }) => {
       return detailPage ? (
         <InfoBlock>
           <Typography variant="h6" component="p">
-            Film by {film?.genres.join(', ')} genres
+            {t('film_by')} {film?.genres.join(', ')} {t('genres')}
           </Typography>
         </InfoBlock>
       ) : (
@@ -32,11 +33,11 @@ const SearchInfo = ({ cardData, detailPage, film }) => {
       return (
         <InfoBlock>
           <Typography variant="h6" component="p">
-            {cardData?.length} movies found
+            {cardData?.length} {t('movies_found')}
           </Typography>
           <SortBlock>
             <Typography variant="h6" component="p">
-              Sort by
+              {t('sort_by')}
             </Typography>
             <ToggleButtonGroup value={radioValue} exclusive onChange={handleChangeRadio}>
               {Object.values(toggleContent).map((option) => (
@@ -64,4 +65,4 @@ SearchInfo.propTypes = {
   film: PropTypes.object,
 };
 
-export default SearchInfo;
+export default withTranslation('search_info')(SearchInfo);

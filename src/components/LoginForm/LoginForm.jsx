@@ -6,8 +6,8 @@ const LoginForm = ({ title, ButtonText, handlerSubmit }) => {
   const [emailData, setEmailData] = useState(null);
   const [passwordData, setPasswordData] = useState(null);
 
-  // Comment: name of the handler is not proper
-  const isHandlerSubmit = (e) => {
+  // Comment: now it's current name for func ?
+  const submitForm = (e) => {
     e.preventDefault();
     const obj = {
       email: emailData,
@@ -27,7 +27,7 @@ const LoginForm = ({ title, ButtonText, handlerSubmit }) => {
           type="email"
           error={!emailData}
           helperText={!emailData && 'input your email'}
-          onChange={(e) => setEmailData(e.target.value)} // TODO validate func
+          onChange={(e) => setEmailData(e.target.value)}
         />
         <FormInput
           placeholder="Password"
@@ -36,7 +36,7 @@ const LoginForm = ({ title, ButtonText, handlerSubmit }) => {
           helperText={!passwordData && passwordData?.length < 5 && 'input your password'}
           onChange={(e) => setPasswordData(e.target.value)}
         />
-        <Button text={ButtonText} type="primary" onClick={isHandlerSubmit} />
+        <Button text={ButtonText} type="primary" onClick={submitForm} />
       </LoginFormBox>
     </>
   );

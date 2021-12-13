@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
+
 
 import { ContainerBlock } from './AuthorizationPage.styles';
 import Button from 'components/common/Button';
@@ -8,7 +10,7 @@ import LoginForm from 'components/LoginForm';
 import { setToken } from 'utils/localStorage';
 import { register } from 'api/auth';
 
-const AuthorizationPage = () => {
+const AuthorizationPage = ({ t }) => {
   const history = useHistory();
   const [errorMessage, setErrorMessage] = useState(false);
 
@@ -35,7 +37,7 @@ const AuthorizationPage = () => {
     <ContainerBlock>
       <Button
         type={'link'}
-        text={'login'}
+        text={t('login')}
         to="/login"
         component={Link}
         sx={{ border: '1px solid black', marginLeft: 'auto' }}
@@ -48,9 +50,9 @@ const AuthorizationPage = () => {
           closeAlert={closeAlert}
         />
       ) : null}
-      <LoginForm title={'sign up'} ButtonText={'SIGN UP'} handlerSubmit={handleRegister} />
+      <LoginForm title={t('sign_up')} ButtonText={'SIGN UP'} handlerSubmit={handleRegister} />
     </ContainerBlock>
   );
 };
 
-export default AuthorizationPage;
+export default withTranslation('auth')(AuthorizationPage);

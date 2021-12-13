@@ -9,10 +9,9 @@ import {
   Wrapper,
 } from './MainLayout.styles';
 import Header from 'components/Header';
-import SearchInfo from 'components/SearchInfo';
 import Footer from 'components/Footer';
 
-const MainLayout = ({ renderHeaderContent, children, cardData, detailPage, film }) => {
+const MainLayout = ({ renderHeaderContent, children, detailPage }) => {
   const classes = useStyles();
 
   return (
@@ -24,8 +23,7 @@ const MainLayout = ({ renderHeaderContent, children, cardData, detailPage, film 
             {renderHeaderContent()}
           </Container>
         </MainLayoutHeaderWrapper>
-        {/* Comment: overcomplicated for create a film genre banner, it should be a part of Detail page only */}
-        <SearchInfo cardData={cardData} detailPage={detailPage} film={film} />
+        
       </div>
 
       <MainLayoutContent>{children}</MainLayoutContent>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withTranslation } from 'react-i18next';
 import { Link, useHistory } from 'react-router-dom';
 
 import { ContainerBlock } from './LoginPage.styles';
@@ -8,7 +9,7 @@ import Alerts from 'components/common/Alerts';
 import { setToken } from 'utils/localStorage';
 import { login } from 'api/auth';
 
-const LoginPage = () => {
+const LoginPage = ({ t }) => {
   const history = useHistory();
   const [errorMessage, setErrorMessage] = useState(false);
 
@@ -42,14 +43,14 @@ const LoginPage = () => {
       ) : null}
       <Button
         type={'link'}
-        text={'sign up'}
+        text={t('sign_up')}
         to="/register"
         component={Link}
         sx={{ border: '1px solid black', marginLeft: 'auto' }}
       />
-      <LoginForm title={'login'} ButtonText={'LOGIN'} handlerSubmit={handleLogin} />
+      <LoginForm title={t('login')} ButtonText={t('login').toLowerCase()} handlerSubmit={handleLogin} />
     </ContainerBlock>
   );
 };
 
-export default LoginPage;
+export default withTranslation('auth')(LoginPage);

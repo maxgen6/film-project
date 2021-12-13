@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 
+import SearchInfo from 'components/SearchInfo';
 import MainLayout from 'components/MainLayout';
 import RenderCards from 'components/RenderCards';
 import FilmInfo from 'components/FilmInfo';
@@ -11,6 +12,7 @@ const DetailPage = ({ cardData }) => {
 
   return (
     <MainLayout renderHeaderContent={renderHeaderContent} detailPage={true} film={cardData[0]}>
+      <SearchInfo cardData={cardData} detailPage={true} film={cardData[0]} />
       <Container maxWidth="xl">
         <RenderCards cardData={cardData} />
       </Container>
