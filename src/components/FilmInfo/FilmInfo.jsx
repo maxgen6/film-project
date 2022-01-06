@@ -15,24 +15,24 @@ const FilmInfo = ({ film }) => {
           height: 400,
           width: 350,
         }}
-        image={film.poster_path}
-        alt={film.title}
+        image={film?.poster_path}
+        alt={film?.title}
       />
       <TypographyBlock>
         <FilmInfoFlexBlock>
           <Typography variant="h4" component="p" color="secondary">
-            {film.title}
+            {film?.title}
           </Typography>
-          <Rating>{film.vote_average}</Rating>
+          <Rating>{film?.vote_average}</Rating>
         </FilmInfoFlexBlock>
 
         <Typography variant="h6" component="p" color="primary">
-          {film.tagline}
+          {film?.tagline}
         </Typography>
 
         <FilmInfoFlexBlock>
           <Typography variant="h6" component="p" color="primary" sx={{ fontWeight: 'bold' }}>
-            {moment(`${film.release_date}`).format('YYYY')}
+            {moment(`${film?.release_date}`).format('YYYY')}
           </Typography>
           <Typography
             variant="h6"
@@ -40,7 +40,7 @@ const FilmInfo = ({ film }) => {
             color="primary"
             sx={{ fontWeight: 'bold', marginLeft: 3 }}
           >
-            {film.runtime} min
+            {film?.runtime} min
           </Typography>
         </FilmInfoFlexBlock>
 
@@ -50,7 +50,7 @@ const FilmInfo = ({ film }) => {
           color="primary"
           sx={{ marginTop: 5, maxWidth: '650px' }}
         >
-          {film.overview}
+          {film?.overview}
         </Typography>
       </TypographyBlock>
     </FilmInfoBlock>

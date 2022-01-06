@@ -48,7 +48,11 @@ const LoginPage = ({ t }) => {
         component={Link}
         sx={{ border: '1px solid black', marginLeft: 'auto' }}
       />
-      <LoginForm title={t('login')} ButtonText={t('login').toLowerCase()} handlerSubmit={handleLogin} />
+      <LoginForm
+        title={t('login')}
+        ButtonText={t('login').toLowerCase()}
+        handlerSubmit={handleLogin}
+      />
     </ContainerBlock>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 
-
 import { ContainerBlock } from './AuthorizationPage.styles';
 import Button from 'components/common/Button';
 import Alerts from 'components/common/Alerts';

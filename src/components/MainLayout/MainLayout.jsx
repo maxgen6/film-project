@@ -23,7 +23,6 @@ const MainLayout = ({ renderHeaderContent, children, detailPage }) => {
             {renderHeaderContent()}
           </Container>
         </MainLayoutHeaderWrapper>
-        
       </div>
 
       <MainLayoutContent>{children}</MainLayoutContent>
@@ -35,7 +34,6 @@ const MainLayout = ({ renderHeaderContent, children, detailPage }) => {
 
 MainLayout.propTypes = {
   renderHeaderContent: PropTypes.func,
-  cardData: PropTypes.array,
   detailPage: PropTypes.bool,
 };
 

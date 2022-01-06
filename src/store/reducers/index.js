@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
-import films from './films';
+import movies from './movies';
 
 const appReducer = combineReducers({
-  films, 
+  movies,
 });
 
 const rootReducers = (state, action) => {

@@ -7,21 +7,22 @@ import MainLayout from 'components/MainLayout';
 import RenderCards from 'components/RenderCards';
 import FilmInfo from 'components/FilmInfo';
 
-const DetailPage = ({ cardData }) => {
-  const renderHeaderContent = () => <FilmInfo film={cardData[0]} />;
+const DetailPage = ({ currentFilm, cards }) => {
+  const renderHeaderContent = () => <FilmInfo film={currentFilm} />;
 
   return (
-    <MainLayout renderHeaderContent={renderHeaderContent} detailPage={true} film={cardData[0]}>
-      <SearchInfo cardData={cardData} detailPage={true} film={cardData[0]} />
+    <MainLayout renderHeaderContent={renderHeaderContent} detailPage={true} film={currentFilm}>
+      <SearchInfo detailPage={true} film={currentFilm} />
       <Container maxWidth="xl">
-        <RenderCards cardData={cardData} />
+        <RenderCards cardData={cards} />
       </Container>
     </MainLayout>
   );
 };
 
 DetailPage.propTypes = {
-  cardData: PropTypes.array,
+  cards: PropTypes.array,
+  currentFilm: PropTypes.object,
 };
 
 export default DetailPage;
