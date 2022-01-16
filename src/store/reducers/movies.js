@@ -1,3 +1,4 @@
+// Comment Review 16.01.2020 - It's better to give meaningful name for a variable, t - is not readable and clear
 import * as t from '../types';
 
 const initialState = {
